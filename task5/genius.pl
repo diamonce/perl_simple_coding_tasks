@@ -26,6 +26,7 @@ my($ptrList, $ptrSign, $ptrResult)	= @_;
 
 	if($Result == 100){
 		$$ptrResult	= $Expression . " = 100";
+		print STDOUT "$$ptrResult\n";
 		return;
 	}
 	else{
@@ -41,13 +42,15 @@ my($ptrList, $ptrSign, $ptrResult)	= @_;
 			&PlaceSigns(\@List, \@Sign, $ptrResult);
 		}
 	}
+
+	return;
 }
 
-my(@List)	= (1, 2, 34, 5, 67, 8, 9);
+my(@List)	= (1, 2, 3, 4, 5, 6, 7, 8, 9);
 my(@Sign)	= ( );
 
 my($Result);
 
 &PlaceSigns(\@List, \@Sign, \$Result);
 
-print STDOUT "$Result\n";
+#print STDOUT "$Result\n";
